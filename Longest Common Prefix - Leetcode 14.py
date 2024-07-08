@@ -18,3 +18,5 @@ class Solution:
         
         return s[:i]
             
+# Time: O(n * m)
+# Space: O(1)
