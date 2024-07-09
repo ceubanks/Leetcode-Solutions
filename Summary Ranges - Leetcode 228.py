@@ -24,3 +24,6 @@ class Solution:
             i += 1
         
         return ans
+    
+# Time: O(n)
+# Space: O(1)
