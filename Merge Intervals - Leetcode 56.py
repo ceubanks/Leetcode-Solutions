@@ -18,3 +18,5 @@ class Solution:
 
         return merged
         
+# Time: O(nlogn)
+# Space: O(n)
