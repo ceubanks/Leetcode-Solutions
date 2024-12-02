@@ -1,16 +1,25 @@
 from collections import Counter
-from heapq import heappush, heappushpop
+from heapq import heappush, heappop, heappushpop
 from typing import List
 
+'''
+Given an array of strings words and an integer k, return the k most frequent strings.
+
+Return the answer sorted by the frequency from highest to lowest. Sort the words with the same frequency by their lexicographical order.
+
+'''
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        count = Counter(nums)
+        counter = Counter(nums)
         heap = []
 
-        for key, freq in count.items():
-            if len(heap) < k:
-                heappush(heap, (freq, key))
-            else:
-                heappushpop(heap, (freq, key))
+        for word, count in counter.items():
+            heappush(heap, (count, word))
 
-        return [h[1] for h in heap]
+            if len(heap) > k:
+                heappop(heap)
+        
+        return [word for count, word in heap]   
+    
+    # Time: O(n * logk)
+    # Space: O(k)
