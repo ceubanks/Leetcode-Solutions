@@ -52,6 +52,15 @@ Now we have:
 
 
 '''
+
+'''
+1. Check if sum of all stones is 9
+2. Find extra stones locations and zero stones locations
+3. Backtrack to find the minimum moves.
+    a. If we have extra stones, we can move them to zero stones locations.
+    b. If we have multiple extra stones, we can move them to the same zero stone location.
+    c. We can move one stone at a time to a zero stone location.
+'''
 DIRECTIONS = [(0,1), (1,0), (0,-1), (-1,0)]
 def min_moves(grid):
 
